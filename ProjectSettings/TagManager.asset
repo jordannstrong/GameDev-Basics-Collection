@@ -8,6 +8,7 @@ TagManager:
   - Pickup
   - ShootingObject
   - Can
+  - hat
   layers:
   - Default
   - TransparentFX

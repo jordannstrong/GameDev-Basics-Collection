@@ -12,11 +12,18 @@ public class GameControl : MonoBehaviour {
     private float platformsSpawnedUpTo = 0.0f;
     private ArrayList platforms;
     private float nextPlatformCheck = 0.0f;
+	private GameObject[] hats;
 
     
 	void Awake () {
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+		hats = GameObject.FindGameObjectsWithTag("hat");
         platforms = new ArrayList();
+
+		// Had issues disabling hats if they weren't all enabled to begin with, so we 
+		// start the game with all hats enabled, then quickly remove them and only reenable one
+		removeHat ();
+		playerTrans.transform.Find("Top_Hat").gameObject.SetActive(true);
 
         SpawnPlatforms(25.0f);
         StartGame();
@@ -62,6 +69,16 @@ public class GameControl : MonoBehaviour {
         {
             GameGUI.score = (int)playerHeight;
         }
+
+		// Pressing a number key removes all hats then applies a corresponding new hat
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			removeHat();
+			playerTrans.transform.Find("Top_Hat").gameObject.SetActive(true);
+		}
+		else if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			removeHat();
+			playerTrans.transform.Find("Viking_Helm").gameObject.SetActive(true);
+		}
 	}
 
 
@@ -100,9 +117,17 @@ public class GameControl : MonoBehaviour {
 			}
             platforms.Add(plat);
 
-            spawnHeight += Random.Range(1.6f, 3.5f);
+            spawnHeight += Random.Range(1.0f, 4.0f);
         }
         platformsSpawnedUpTo = upTo;
     }
+		
+	void removeHat()
+	{
+		foreach(GameObject hat in hats)
+		{
+			hat.SetActive(false);
+		}
+	}
 
 }

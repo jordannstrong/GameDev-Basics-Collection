@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31743607, g: 0.3072896, b: 0.2599256, a: 1}
+  m_IndirectSpecularColor: {r: 0.31743515, g: 0.30728862, b: 0.2599251, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -259,6 +259,22 @@ Prefab:
     - target: {fileID: 400002, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
+      propertyPath: m_TagString
+      value: hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
+      propertyPath: m_TagString
+      value: hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
+      propertyPath: m_Name
+      value: Top_Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9644dc1424bc5014a8f8b01bc12e49b5, type: 3}
