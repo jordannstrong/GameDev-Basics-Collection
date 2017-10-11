@@ -74,7 +74,6 @@ public class GameControl : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 			removeHat();
 			playerTrans.transform.Find("Top_Hat").gameObject.SetActive(true);
-			Playermovement.doubleJump = false;
 
 		}
 		else if (Input.GetKeyDown (KeyCode.Alpha2)) {
@@ -131,6 +130,9 @@ public class GameControl : MonoBehaviour {
 		{
 			hat.SetActive(false);
 		}
+
+		Playermovement.doubleJump = false;
+
 	}
 
 }
