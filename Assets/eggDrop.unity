@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c096446ed7f35b46a81b7e1b88be076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eggPrefab: {fileID: 423088, guid: 15e1063bf578a8e43b820e16bd204b16, type: 2}
+  eggPrefab: {fileID: 423088, guid: 4cf8536aa576fd64bab7ad1829d92dd2, type: 2}
 --- !u!4 &426760814
 Transform:
   m_ObjectHideFlags: 0
@@ -649,7 +649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ce3efbb41476e4bab47ef3e29ac515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayerScript: {fileID: 0}
 --- !u!1001 &1268299099
 Prefab:
   m_ObjectHideFlags: 0

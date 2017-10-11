@@ -7,7 +7,7 @@ public class Playermovement : MonoBehaviour
 
     public float movementSpeed = 5.0f;
     private bool isGrounded = true;
-	private bool doubleJump = true;
+	public static bool doubleJump = false;
 	private int jumpState = 0;
 
     void Update() 
