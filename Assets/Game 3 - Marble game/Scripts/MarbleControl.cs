@@ -4,11 +4,19 @@ using System.Collections;
 public class MarbleControl : MonoBehaviour {
 
     public float movementSpeed = 6.0f;
+	public bool isGrounded = true;
+
 	
 	void Update () {
-        	Vector3 movement = (Input.GetAxis("Horizontal") * -Vector3.left * movementSpeed) + (Input.GetAxis("Vertical") * Vector3.forward *movementSpeed);
+		Vector3 movement = (Input.GetAxis("Horizontal") * Camera.main.transform.right * movementSpeed) + (Input.GetAxis("Vertical") * Camera.main.transform.forward *movementSpeed);
 		movement *= Time.deltaTime;
-        	GetComponent<Rigidbody>().AddForce(movement, ForceMode.Force);
+        GetComponent<Rigidbody>().AddForce(movement, ForceMode.Force);
+
+		if (Input.GetButtonDown ("Jump") && isGrounded == true) {
+			GetComponent<Rigidbody>().AddForce (new Vector3 (0, 200, 0), ForceMode.Force); 
+			isGrounded = false;
+		}
+
 	}
 
     void OnTriggerEnter  (Collider other  ) {
@@ -17,10 +25,13 @@ public class MarbleControl : MonoBehaviour {
             MarbleGameManager.SP.FoundGem();
             Destroy(other.gameObject);
         }
-        else
-        {
-            //Other collider.. See other.tag and other.name
-        }        
     }
+
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.tag == "platform") {
+			isGrounded = true; 
+		}
+	}
 
 }
