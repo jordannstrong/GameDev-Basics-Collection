@@ -3,7 +3,8 @@ using System.Collections;
 
 public enum GameState { playing, gameover };
 
-public class GameControl : MonoBehaviour {
+public class GameControl : MonoBehaviour
+{
 
     public Transform platformPrefab;
     public static GameState gameState;
@@ -12,22 +13,23 @@ public class GameControl : MonoBehaviour {
     private float platformsSpawnedUpTo = 0.0f;
     private ArrayList platforms;
     private float nextPlatformCheck = 0.0f;
-	private GameObject[] hats;
+    private GameObject[] hats;
 
-    
-	void Awake () {
+
+    void Awake()
+    {
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
-		hats = GameObject.FindGameObjectsWithTag("hat");
+        hats = GameObject.FindGameObjectsWithTag("hat");
         platforms = new ArrayList();
 
-		// Had issues disabling hats if they weren't all enabled to begin with, so we 
-		// start the game with all hats enabled, then quickly remove them and only reenable one
-		removeHat ();
-		playerTrans.transform.Find("Top_Hat").gameObject.SetActive(true);
+        // Had issues disabling hats if they weren't all enabled to begin with, so we 
+        // start the game with all hats enabled, then quickly remove them and only reenable one
+        removeHat();
+        playerTrans.transform.Find("Top_Hat").gameObject.SetActive(true);
 
         SpawnPlatforms(25.0f);
         StartGame();
-	}
+    }
 
     void StartGame()
     {
@@ -42,7 +44,8 @@ public class GameControl : MonoBehaviour {
         GameGUI.SP.CheckHighscore();
     }
 
-	void Update () {
+    void Update()
+    {
         //Do we need to spawn new platforms yet? (we do this every X meters we climb)
         float playerHeight = playerTrans.position.y;
         if (playerHeight > nextPlatformCheck)
@@ -56,7 +59,9 @@ public class GameControl : MonoBehaviour {
         if (playerTrans.position.y > currentCameraHeight)
         {
             transform.position = new Vector3(transform.position.x, newHeight, transform.position.z);
-        }else{
+        }
+        else
+        {
             //Player is lower..maybe below the cameras view?
             if (playerHeight < (currentCameraHeight - 15))
             {
@@ -70,22 +75,25 @@ public class GameControl : MonoBehaviour {
             GameGUI.score = (int)playerHeight;
         }
 
-		// Pressing a number key removes all hats then applies a corresponding new hat
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
-			removeHat();
-			playerTrans.transform.Find("Top_Hat").gameObject.SetActive(true);
-			Playermovement.floatJump = true;
+        // Pressing a number key removes all hats then applies a corresponding new hat
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            removeHat();
+            playerTrans.transform.Find("Top_Hat").gameObject.SetActive(true);
+            Playermovement.floatJump = true;
 
-		}
-		else if (Input.GetKeyDown (KeyCode.Alpha2)) {
-			removeHat();
-			playerTrans.transform.Find("Viking_Helm").gameObject.SetActive(true);
-			Playermovement.doubleJump = true;
-		}
-		else if (Input.GetKeyDown (KeyCode.Alpha3)) {
-			removeHat();
-		}
-	}
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            removeHat();
+            playerTrans.transform.Find("Viking_Helm").gameObject.SetActive(true);
+            Playermovement.doubleJump = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            removeHat();
+        }
+    }
 
 
 
@@ -94,14 +102,14 @@ public class GameControl : MonoBehaviour {
         nextPlatformCheck = playerTrans.position.y + 10;
 
         //Delete all platforms below us (save performance)
-        for(int i = platforms.Count-1;i>=0;i--)
+        for (int i = platforms.Count - 1; i >= 0; i--)
         {
             Transform plat = (Transform)platforms[i];
             if (plat.position.y < (transform.position.y - 10))
             {
                 Destroy(plat.gameObject);
                 platforms.RemoveAt(i);
-            }            
+            }
         }
 
         //Spawn new platforms, 25 units in advance
@@ -118,26 +126,27 @@ public class GameControl : MonoBehaviour {
             Vector3 pos = new Vector3(x, spawnHeight, 12.0f);
 
             Transform plat = (Transform)Instantiate(platformPrefab, pos, Quaternion.identity);
-			if (Random.Range (1, 10) <= 5) {
-				plat.transform.Rotate (0, 0, 90);
-			}
+            if (Random.Range(1, 10) <= 5)
+            {
+                plat.transform.Rotate(0, 0, 90);
+            }
             platforms.Add(plat);
 
             spawnHeight += Random.Range(1.0f, 4.0f);
         }
         platformsSpawnedUpTo = upTo;
     }
-		
-	void removeHat()
-	{
-		foreach(GameObject hat in hats)
-		{
-			hat.SetActive(false);
-		}
 
-		Playermovement.doubleJump = false;
-		Playermovement.floatJump = false;
+    void removeHat()
+    {
+        foreach (GameObject hat in hats)
+        {
+            hat.SetActive(false);
+        }
 
-	}
+        Playermovement.doubleJump = false;
+        Playermovement.floatJump = false;
+
+    }
 
 }

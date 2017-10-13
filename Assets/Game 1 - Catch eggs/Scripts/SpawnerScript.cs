@@ -7,7 +7,6 @@ public class SpawnerScript : MonoBehaviour {
 
     private float nextEggTime = 0.0f;
     private float spawnRate;
-	private float deleteFirstEgg = 0;
  	
 	void Awake()
 	{
@@ -36,11 +35,7 @@ public class SpawnerScript : MonoBehaviour {
 	void Update () {
         if (nextEggTime < Time.time)
         {
-			if (deleteFirstEgg > 0) {
-				SpawnEgg ();
-			} else {
-				deleteFirstEgg++;
-			}
+            SpawnEgg();
             nextEggTime = Time.time + spawnRate;
 
             //Speed up the spawnrate for the next egg
