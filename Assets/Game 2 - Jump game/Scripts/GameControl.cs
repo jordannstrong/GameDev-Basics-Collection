@@ -58,7 +58,7 @@ public class GameControl : MonoBehaviour {
             transform.position = new Vector3(transform.position.x, newHeight, transform.position.z);
         }else{
             //Player is lower..maybe below the cameras view?
-            if (playerHeight < (currentCameraHeight - 10))
+            if (playerHeight < (currentCameraHeight - 15))
             {
                 GameOver();
             }
