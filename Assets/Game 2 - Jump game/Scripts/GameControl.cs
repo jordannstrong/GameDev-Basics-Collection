@@ -81,6 +81,9 @@ public class GameControl : MonoBehaviour {
 			playerTrans.transform.Find("Viking_Helm").gameObject.SetActive(true);
 			Playermovement.doubleJump = true;
 		}
+		else if (Input.GetKeyDown (KeyCode.Alpha3)) {
+			removeHat();
+		}
 	}
 
 
