@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MarbleControl : MonoBehaviour {
 
-    public float movementSpeed = 6.0f;
+    public float movementSpeed = 90.0f;
 	public bool isGrounded = true;
 
 	
