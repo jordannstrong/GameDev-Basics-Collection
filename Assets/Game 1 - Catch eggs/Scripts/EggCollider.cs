@@ -37,7 +37,7 @@ public class EggCollider : MonoBehaviour {
 			case "bigEgg":
 				powerupTime = Time.time + 5.0f;
 				powerupActive = true;
-				GameObject.Find("bucket").transform.localScale += new Vector3(0.1f, 0, 0);
+				GameObject.Find("bucket").transform.localScale += new Vector3(0.05f, 0, 0.05f);
 				break;
 			default:
 				break;
