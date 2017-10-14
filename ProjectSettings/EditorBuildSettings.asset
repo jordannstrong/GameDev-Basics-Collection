@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/menu.unity
+    guid: d5873be7fa4b3b44bbf2e703926b21f6
+  - enabled: 1
+    path: Assets/eggDrop.unity
+    guid: 7d2d78c6214166847899441e1bda1e79
+  - enabled: 1
+    path: Assets/jumpgame.unity
+    guid: 1f284778ce23fb745885359298dc21f8
+  - enabled: 1
+    path: Assets/marble.unity
+    guid: bfff9a8ba4f1fb3448ce43b5c6300436
