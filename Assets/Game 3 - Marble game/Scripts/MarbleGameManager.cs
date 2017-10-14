@@ -27,6 +27,13 @@ public class MarbleGameManager : MonoBehaviour
 		Debug.Log("Active scene is '" + scene.name + "'.");
     }
 
+	void Update()
+	{
+		if (Input.GetKey ("escape")) {
+			SceneManager.LoadScene(0);
+		}
+	}
+
 	void OnGUI () {
 
 		style.normal.textColor = Color.black;

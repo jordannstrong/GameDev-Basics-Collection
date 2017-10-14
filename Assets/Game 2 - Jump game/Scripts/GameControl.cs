@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public enum GameState { playing, gameover };
 
@@ -84,6 +85,10 @@ public class GameControl : MonoBehaviour {
 		}
 		else if (Input.GetKeyDown (KeyCode.Alpha3)) {
 			removeHat();
+		}
+
+		if (Input.GetKey ("escape")) {
+			SceneManager.LoadScene(0);
 		}
 	}
 

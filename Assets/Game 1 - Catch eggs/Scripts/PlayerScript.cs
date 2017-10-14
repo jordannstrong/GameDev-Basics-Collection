@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
     
@@ -34,6 +35,10 @@ public class PlayerScript : MonoBehaviour {
 			timeOut = true;
 		} else {
 			time -= Time.deltaTime;
+		}
+
+		if (Input.GetKey ("escape")) {
+			SceneManager.LoadScene(0);
 		}
 			
 	}
