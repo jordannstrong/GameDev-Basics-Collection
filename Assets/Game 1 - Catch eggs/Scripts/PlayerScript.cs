@@ -41,10 +41,10 @@ public class PlayerScript : MonoBehaviour {
     //OnGUI is called multiple times per frame. Use this for GUI stuff only!
     void OnGUI()
     {
-        GUI.contentColor = Color.black;
+		GUI.contentColor = Color.black;
         //We display the game GUI from the playerscript
         //It would be nicer to have a seperate script dedicated to the GUI though...
-        if (timeOut == false) {
+		if (timeOut == false) {
 			GUILayout.Label ("Score: " + theScore);
 
 			GUILayout.Label ("Time: " + (int)time);
