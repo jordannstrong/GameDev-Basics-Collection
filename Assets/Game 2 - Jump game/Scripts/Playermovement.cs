@@ -32,6 +32,7 @@ public class Playermovement : MonoBehaviour
 				jumpState = 1;
 			}
 			else if(doubleJump == true && jumpState == 1){
+				GetComponent<Rigidbody> ().velocity = new Vector3(0, 0, 0);
 				GetComponent<Rigidbody>().AddForce(new Vector3(0, 700, 0), ForceMode.Force); 
 				jumpState = 2;
 			}
