@@ -9,6 +9,9 @@ public class PlayerScript : MonoBehaviour {
 	public bool timeOut = false;
 	public bool win = false;
 
+	void Awake() {
+		Time.timeScale = 1.0f;
+	}
 	void Update () {
 		
         //These two lines are all there is to the actual movement..
@@ -56,8 +59,16 @@ public class PlayerScript : MonoBehaviour {
 		} else {
 			if (win == false) {
 				GUILayout.Label ("You lose!");
+				if (GUILayout.Button("Try again"))
+				{
+					SceneManager.LoadScene(1);
+				}
 			} else {
 				GUILayout.Label ("You win!");
+				if (GUILayout.Button("Play again"))
+				{
+					SceneManager.LoadScene(1);
+				}
 			}
 		}
 

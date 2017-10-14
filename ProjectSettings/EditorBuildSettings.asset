@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/marblemarcus.unity
     guid: c29172d127213c64ca6ac0ed9bb2c092
+  - enabled: 1
+    path: Assets/workaround.unity
+    guid: 62d437fe636646140ac2ad8ad99acdcb
