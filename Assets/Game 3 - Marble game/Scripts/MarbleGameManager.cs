@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public enum MarbleGameState {playing, won,lost };
 
@@ -11,6 +12,7 @@ public class MarbleGameManager : MonoBehaviour
     private int foundGems;
     private MarbleGameState gameState;
 	private GUIStyle style;
+	Scene scene = SceneManager.GetActiveScene();
 
 
     void Awake()
@@ -21,6 +23,8 @@ public class MarbleGameManager : MonoBehaviour
         totalGems = GameObject.FindGameObjectsWithTag("Pickup").Length;
         Time.timeScale = 1.0f;
 		style = new GUIStyle ();
+		scene = SceneManager.GetActiveScene ();
+		Debug.Log("Active scene is '" + scene.name + "'.");
     }
 
 	void OnGUI () {
@@ -38,9 +42,22 @@ public class MarbleGameManager : MonoBehaviour
         else if (gameState == MarbleGameState.won)
         {
 			GUILayout.Label("You won!", style);
-            if(GUILayout.Button("Play again") ){
-                Application.LoadLevel(Application.loadedLevel);
-            }
+			if (GUILayout.Button ("Next Level")) {
+				
+			
+				if (scene.name == "marble 1") {
+					GUILayout.Button ("Next Level");
+					Application.LoadLevel (4);
+				} 
+				if (scene.name == "marblelevel2") {
+					GUILayout.Button ("Next Level");
+					Application.LoadLevel (5);
+				} 
+				if (scene.name == "marblemarcus") {
+					GUILayout.Button ("Play Again");
+					Application.LoadLevel (5);
+				}
+			}
         }
 	}
 

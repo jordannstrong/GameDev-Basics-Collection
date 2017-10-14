@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/jumpgame.unity
     guid: 1f284778ce23fb745885359298dc21f8
-  - enabled: 1
+  - enabled: 0
     path: Assets/marble.unity
     guid: bfff9a8ba4f1fb3448ce43b5c6300436
+  - enabled: 1
+    path: Assets/marble 1.unity
+    guid: 8ef2718232207a84889cc0a4b0689aec
+  - enabled: 1
+    path: Assets/marblelevel2.unity
+    guid: e88c0b4a166e65343b18afc3139a953b
+  - enabled: 1
+    path: Assets/marblemarcus.unity
+    guid: c29172d127213c64ca6ac0ed9bb2c092
