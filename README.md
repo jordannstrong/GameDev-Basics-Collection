@@ -16,7 +16,7 @@ to randomly spawn everything. Retextured the ground and hills.
 
 Infinite Jumper: Replaced the default player model with a baby dragon and added the ability to swap between hats (for different effects)
 or remove them altogether. Also adjusted the bottom boundary detection so that the player character can stand on platforms at the bottom
-of the screen with "dying".
+of the screen without "dying".
 
 Marble Runner: Added new levels, A camera that can be rotated with the mouse (when enabled), moving platforms, a jump function, 
 and new textures. Only one of the levels has a fixed-angle camera because the moving camera starts fighting the textures if a 
