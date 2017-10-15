@@ -49,24 +49,21 @@ public class MarbleGameManager : MonoBehaviour
         else if (gameState == MarbleGameState.won)
         {
 			GUILayout.Label("You won!", style);
-			if (GUILayout.Button ("Next Level")) {
-				
-			
 				if (scene.name == "marble 1") {
-					GUILayout.Button ("Next Level");
+				if(GUILayout.Button ("Next Level"))
 					Application.LoadLevel (4);
 				} 
 				if (scene.name == "marblelevel2") {
-					GUILayout.Button ("Next Level");
+				if(GUILayout.Button ("Next Level"))
 					Application.LoadLevel (5);
 				} 
 				if (scene.name == "marblemarcus") {
-					GUILayout.Button ("Play Again");
-					Application.LoadLevel (5);
+				if(GUILayout.Button ("Play Again"))
+					Application.LoadLevel (3);
 				}
 			}
         }
-	}
+
 
     public void FoundGem()
     {
